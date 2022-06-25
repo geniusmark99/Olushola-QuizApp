@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashbaord</title>
+    <link rel="stylesheet" type="text/css" href="../styles/main-dashboard.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/Variable.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/web.css"/>
+  </head>
+  <style></style>
+  <!-- dark-mode -->
+  <body>
+    <div id="app">
+      <!-- Top Nav -->
+      <div top-nav>
+        <div mob-search>
+          <div search-box>
+            <input
+              type="search"
+              autocomplete="off"
+              placeholder="Type to Search..."
+              input-search-data
+            />
+            <div search-btn id="search-btn">
+              <svg viewBox="0 0 48 48" class="svg-sm blue-svg">
+                <use xlink:href="#search"></use>
+              </svg>
+            </div>
+
+            <div cancel-btn id="close-mob-search" title="close">
+              <svg class="svg-sm"><use xlink:href="#cancel"></use></svg>
+            </div>
+          </div>
+          <div mob-search-dropdown>
+            <div id="FetchspinnerLoader"></div>
+          </div>
+          &nbsp;
+          <span id="search-desc-txt">Search</span>
+        </div>
+
+        <div id="logo">LOGO</div>
+
+        <div mob-side-content>
+          <div class="svg-icons notification" onclick="ShowNotification()">
+            <svg class="svg-sm">
+              <use xlink:href="#notification"></use>
+            </svg>
+          </div>
+          <div class="svg-icons more-menu">
+            <svg class="svg-sm" viewBox="0 0 50 50">
+              <use xlink:href="#more-menu"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div desk-nav-content>
+          <div
+            desk-notify
+            class="svg-icons notification"
+            onclick="ShowNotification()"
+          >
+            <svg class="svg-sm" viewBox="0 0 50 50">
+              <use xlink:href="#notification"></use>
+            </svg>
+          </div>
+          <div desk-user-img>
+            <img src="../images/user-img.svg" id="user-img" />
+            <div desk-user-cont>
+              <div class="user-desc-info">
+                <div class="user-name">Mark David</div>
+                <div class="user-email">davidmark@gmail.com</div>
+                <div class="user-member-level">
+                  Premium Member &nbsp;
+                  <img src="../images/star.svg" class="svg-xsm" />
+                  <img src="../images/star.svg" class="svg-xsm" />
+                  <img src="../images/star.svg" class="svg-xsm" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======== Navigation Dropdown ========== -->
+        <div id="notification-dropdown">
+          <div id="notification-close" title="click to close">
+            <svg>
+              <use xlink:href="#cancel"></use>
+            </svg>
+          </div>
+          <!-- The Lord is Good -->
+          <ul>
+            <li>Render Notification to user here</li>
+          </ul>
+        </div>
+        <!-- ======== End Of Navigation Dropdown ========== -->
+
+        <div left-sidebar class="hide">
+          <div left-sidebar-inner>
+            <div close>
+              <svg>
+                <use xlink:href="#cancel"></use>
+              </svg>
+            </div>
+            <div left-side-cont>
+              <div class="user-info">
+                <div class="user-img-info">
+                  <img src="../images/user-img.svg" />
+                </div>
+                <div class="user-desc-info">
+                  <div class="user-name">Mark David</div>
+                  <div class="user-email">davidmark@gmail.com</div>
+                  <div class="user-member-level">
+                    Premium Member &nbsp;
+                    <img src="../images/star.svg" class="svg-xsm" />
+                    <img src="../images/star.svg" class="svg-xsm" />
+                    <img src="../images/star.svg" class="svg-xsm" />
+                  </div>
+                </div>
+              </div>
+
+              <a class="left-sidebar-cont active" href="./Dashboard.html">
+                <div class="menu-content">
+                  <div class="menu-content-sub">
+                    <span class="menu-icons">
+                      <svg viewBox="0 0 48 48" class="svg-sm">
+                        <use xlink:href="#dashboard"></use>
+                      </svg>
+                    </span>
+                    Dashboard
+                  </div>
+                </div>
+                <div class="arrow-right-icons">
+                  <svg class="svg-sm" viewBox="0 0 50 50">
+                    <use xlink:href="#arrow-right-sec"></use>
+                  </svg>
+                </div>
+              </a>
+
+                <a class="left-sidebar-cont" href="./E-learn.html">
+                <div class="menu-content">
+                  <div class="menu-content-sub">
+                    <span class="menu-icons">
+                      <svg viewBox="0 0 48 48" class="svg-sm">
+                        <use xlink:href="#dashboard"></use>
+                      </svg>
+                    </span>
+                    E-learn
+                  </div>
+                </div>
+                <div class="arrow-right-icons">
+                  <svg class="svg-sm" viewBox="0 0 50 50">
+                    <use xlink:href="#arrow-right-sec"></use>
+                  </svg>
+                </div>
+              </a>
+
+              <div class="left-sidebar-cont" onclick="StartQuiz()">
+                <div class="menu-content">
+                  <div class="menu-content-sub">
+                    <span class="menu-icons">
+                      <svg viewBox="0 0 48 48" class="svg-sm">
+                        <use xlink:href="#start-quiz"></use>
+                      </svg>
+                    </span>
+                    Start Quiz
+                  </div>
+                </div>
+                <div class="arrow-right-icons">
+                  <svg class="svg-sm" viewBox="0 0 50 50">
+                    <use xlink:href="#arrow-right-sec"></use>
+                  </svg>
+                </div>
+              </div>
+
+              <a
+                class="left-sidebar-cont"
+                id="create-quiz"
+                href="./Create-Quiz.html"
+              >
+                <div class="menu-content">
+                  <div class="menu-content-sub">
+                    <span class="menu-icons">
+                      <svg viewBox="0 0 48 48" class="svg-sm">
+                        <use xlink:href="#add"></use>
+                      </svg>
+                    </span>
+                    Create Quiz
+                  </div>
+                </div>
+                <div class="arrow-right-icons">
+                  <svg class="svg-sm" viewBox="0 0 50 50">
+                    <use xlink:href="#arrow-right-sec"></use>
+                  </svg>
+                </div>
+              </a>
+
+              <a class="left-sidebar-cont" href="./Results.html">
+                <div class="menu-content">
+                  <div class="menu-content-sub">
+                    <span class="menu-icons">
+                      <svg viewBox="0 0 48 48" class="svg-sm">
+                        <use xlink:href="#result"></use>
+                      </svg>
+                    </span>
+                    Results
+                  </div>
+                </div>
+                <div class="arrow-right-icons">
+                  <svg class="svg-sm" viewBox="0 0 50 50">
+                    <use xlink:href="#arrow-right-sec"></use>
+                  </svg>
+                </div>
+              </a>
+<!-- 
+              <a class="left-sidebar-cont" href="./Settings.html">
+                <div class="menu-content">
+                  <div class="menu-content-sub">
+                    <span class="menu-icons">
+                      <svg viewBox="0 0 48 48" class="svg-sm">
+                        <use xlink:href="#settings"></use>
+                      </svg>
+                    </span>
+                    Settings
+                  </div>
+                </div>
+                <div class="arrow-right-icons">
+                  <svg class="svg-sm" viewBox="0 0 50 50">
+                    <use xlink:href="#arrow-right-sec"></use>
+                  </svg>
+                </div>
+              </a>
+ -->
+              <div class="left-sidebar-cont">
+                <div class="menu-content">
+                  <div class="menu-content-sub">
+                    <span class="menu-icons">
+                      <svg viewBox="0 0 48 48" class="svg-sm">
+                        <use xlink:href="#appearance"></use>
+                      </svg>
+                    </span>
+                   Dark mode
+                  </div>
+                </div>
+                <div class="arrow-right-icons">
+                  <button
+                    class="light-mode-button"
+                    aria-label="Toggle Light Mode"
+                    onclick="DarkMode()"
+                  >
+                    <span></span>
+                    <span></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="center-content">
+        <!-- Desktop  Sidebar-->
+        <div desk-side-bar>
+          <a
+            class="left-sidebar-cont active start-quiz-class"
+            href="./Dashboard.html">
+            <div class="menu-content">
+              <div class="menu-content-sub">
+                <span class="menu-icons">
+                  <svg viewBox="0 0 48 48" class="svg-sm">
+                    <use xlink:href="#dashboard"></use>
+                  </svg>
+                </span>
+                Dashboard
+              </div>
+            </div>
+            <div class="arrow-right-icons">
+              <svg class="svg-sm" viewBox="0 0 50 50">
+                <use xlink:href="#arrow-right-sec"></use>
+              </svg>
+            </div>
+          </a>
+
+           <a
+            class="left-sidebar-cont start-quiz-class"
+            href="./E-learn.html">
+            <div class="menu-content">
+              <div class="menu-content-sub">
+                <span class="menu-icons">
+                  <svg viewBox="0 0 48 48" class="svg-sm">
+                    <use xlink:href="#dashboard"></use>
+                  </svg>
+                </span>
+                E-Learn
+              </div>
+            </div>
+            <div class="arrow-right-icons">
+              <svg class="svg-sm" viewBox="0 0 50 50">
+                <use xlink:href="#arrow-right-sec"></use>
+              </svg>
+            </div>
+          </a>
+
+          <div class="left-sidebar-cont start-quiz-class" onclick="StartQuiz()"
+ data-title="Ctrl + S to Open"
+            style="--data-title-left-over: 270px; --data-title-top-over:12px"
+          >
+            <div class="menu-content">
+              <div class="menu-content-sub">
+                <span class="menu-icons">
+                  <svg viewBox="0 0 48 48" class="svg-sm">
+                    <use xlink:href="#start-quiz"></use>
+                  </svg>
+                </span>
+                Start Quiz
+              </div>
+            </div>
+            <div class="arrow-right-icons">
+              <svg class="svg-sm" viewBox="0 0 50 50">
+                <use xlink:href="#arrow-right-sec"></use>
+              </svg>
+            </div>
+          </div>
+
+          <a class="left-sidebar-cont" href="./Create-Quiz.html">
+            <div class="menu-content">
+              <div class="menu-content-sub">
+                <span class="menu-icons">
+                  <svg viewBox="0 0 48 48" class="svg-sm">
+                    <use xlink:href="#add"></use>
+                  </svg>
+                </span>
+                Create Quiz
+              </div>
+            </div>
+            <div class="arrow-right-icons">
+              <svg class="svg-sm" viewBox="0 0 50 50">
+                <use xlink:href="#arrow-right-sec"></use>
+              </svg>
+            </div>
+          </a>
+
+          <a class="left-sidebar-cont" href="./Results.html">
+            <div class="menu-content">
+              <div class="menu-content-sub">
+                <span class="menu-icons">
+                  <svg viewBox="0 0 48 48" class="svg-sm">
+                    <use xlink:href="#result"></use>
+                  </svg>
+                </span>
+                Results
+              </div>
+            </div>
+            <div class="arrow-right-icons">
+              <svg class="svg-sm" viewBox="0 0 50 50">
+                <use xlink:href="#arrow-right-sec"></use>
+              </svg>
+            </div>
+          </a>
+<!-- 
+          <a class="left-sidebar-cont" href="./Settings.html">
+            <div class="menu-content">
+              <div class="menu-content-sub">
+                <span class="menu-icons">
+                  <svg viewBox="0 0 48 48" class="svg-sm">
+                    <use xlink:href="#settings"></use>
+                  </svg>
+                </span>
+                Settings
+              </div>
+            </div>
+            <div class="arrow-right-icons">
+              <svg class="svg-sm" viewBox="0 0 50 50">
+                <use xlink:href="#arrow-right-sec"></use>
+              </svg>
+            </div>
+          </a> -->
+
+          <div class="left-sidebar-cont">
+            <div class="menu-content">
+              <div class="menu-content-sub">
+                <span class="menu-icons">
+                  <svg viewBox="0 0 48 48" class="svg-sm">
+                    <use xlink:href="#appearance"></use>
+                  </svg>
+                </span>
+                Dark mode
+              </div>
+            </div>
+            <div class="arrow-right-icons">
+              <button
+                class="light-mode-button"
+                aria-label="Toggle Light Mode"
+                onclick="DarkMode()"
+              >
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- End Of Desktop  Sidebar-->
+
+        <!-- VIEW DASHBOARD -->
+        <div class="viewDashboard">
+          <div class="page-desc">
+            <h3>Dashbaord</h3>
+          </div>
+          <div id="main-dashboard">
+            <div id="main-dashboard-subjects">
+              <div class="subjects-dashboard-charts" id="maths-charts-view">
+                <div class="subject-charts">
+                  <div id="math-chart"></div>
+                </div>
+                <div class="subject-name">
+                  <p>Mathematics</p>
+                </div>
+              </div>
+              <div class="subjects-dashboard-charts" id="english-charts-view">
+                <div class="subject-charts">
+                  <div id="english-chart"></div>
+                </div>
+                <div class="subject-name">
+                  <p>English</p>
+                </div>
+              </div>
+              <div class="subjects-dashboard-charts" id="physics-charts-view">
+                <div class="subject-charts">
+                  <div id="physic-chart"></div>
+                </div>
+                <div class="subject-name">
+                  <p>Physics</p>
+                </div>
+              </div>
+              <div class="subjects-dashboard-charts" id="chemistry-charts-view">
+                <div class="subject-charts">
+                  <div id="chemistry-chart"></div>
+                </div>
+                <div class="subject-name">
+                  <p>Chemistry</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="students-result-list">
+            <div class="students-title-types" id="students-title-types"></div>
+            <div class="students-info" id="students-info">  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start Quiz-->
+    <div id="start-quiz-selected-subjects">
+      <div id="start-quiz-selected-subjects-sub">
+        <div id="close-quiz-selected-subjects" data-title="close or esc" style="--data-title-top-over: 30px">
+          <svg class="svg-sm">
+            <use xlink:href="#cancel"></use>
+          </svg>
+        </div>
+        <div id="inner-start-selected-subject">
+          <h3>Start Quiz</h3>
+          <form id="start-form-content" action="home.html">
+            <div class="form-content-sub">
+              <div class="dropdown-form">
+                <div class="dropdown-form-main-cont" id="select-subject">
+                  <div class="subject-txt-desc">Select Subjects</div>
+                  <div id="select-subject-close">
+                    <svg
+                      class="svg-sm collapse-arrow"
+                      id="select-subject-arrow"
+                    >
+                      <use xlink:href="#collapse-arrow"></use>
+                    </svg>
+                  </div>
+                </div>
+                <div class="drop-down-cont" id="ddC-select-subject">
+                  <div id="select-subject-ul">
+                    <div class="select-subject-li">
+                      <div class="subject-txt"><h4>Mathematics</h4></div>
+                      <div class="checkbox-subject-txt">
+                        <input
+                          type="checkbox"
+                          class="svg-checkbox-input"
+                          id="maths-checkbox"
+                          name="mathematics"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="select-subject-li">
+                      <div class="subject-txt"><h4>English Language</h4></div>
+                      <div class="checkbox-subject-txt">
+                        <input
+                          type="checkbox"
+                          class="svg-checkbox-input"
+                          id="english-checkbox"
+                          name="english"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="select-subject-li">
+                      <div class="subject-txt"><h4>Physics</h4></div>
+                      <div class="checkbox-subject-txt">
+                        <input
+                          type="checkbox"
+                          class="svg-checkbox-input"
+                          id="physic-checkbox"
+                          name="physics"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="select-subject-li">
+                      <div class="subject-txt"><h4>Chemistry</h4></div>
+                      <div class="checkbox-subject-txt">
+                        <input
+                          type="checkbox"
+                          class="svg-checkbox-input"
+                          id="chem-checkbox"
+                          name="chemistry"
+                        />
+                      </div>
+                    </div>
+
+     
+                    <div class="select-all-subject" id="select-all-subject">
+                      Select All
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dropdown-form">
+                <div class="dropdown-form-main-cont" id="select-topics">
+                  <div class="subject-txt-desc">Select Topics</div>
+                  <div>
+                    <svg class="svg-sm collapse-arrow" id="select-topics-arrow">
+                      <use xlink:href="#collapse-arrow"></use>
+                    </svg>
+                  </div>
+                </div>
+                <div class="drop-down-cont" id="ddC-select-topics">
+                  <span id="no_subject_selected">Please select a subject</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-content-sub">
+              <div class="dropdown-form">
+                <div class="dropdown-form-main-cont" id="set-time">
+                  <div class="subject-txt-desc">Time to Finish</div>
+                  <div>
+                    <svg class="svg-sm collapse-arrow" id="set-time-arrow">
+                      <use xlink:href="#collapse-arrow"></use>
+                    </svg>
+                  </div>
+                </div>
+                <div class="drop-down-cont" id="ddC-set-time">
+                  <input
+                    id="appt-time"
+                    type="time"
+                    name="appt-time"
+                    value="13:30"
+                  />
+                </div>
+              </div>
+
+          <!--     <div class="dropdown-form">
+                <div class="dropdown-form-main-cont" id="extra-settings">
+                  <div class="subject-txt-desc">Extra Settings</div>
+                  <div>
+                    <svg class="svg-sm collapse-arrow">
+                      <use xlink:href="#collapse-arrow"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+
+            <button type="submit" id="start-quiz-btn">Start</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- End Start Quiz-->
+
+    <svg style="display: none" id="svg__render"></svg>
+    <script type="text/javascript" src="../scripts/functions.js"></script>
+    <script type="text/javascript" src="../scripts/icons.js"></script>
+    <script type="text/javascript" src="../scripts/apexcharts.js"></script>
+    <script type="text/javascript" src="../scripts/events.js"></script>
+    <script type="text/javascript" src="../scripts/main-dashboard.js"></script>
+    <script type="text/javascript" src="../scripts/chart-render.js"></script>
+  </body>
+</html>

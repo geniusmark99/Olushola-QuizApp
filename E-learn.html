@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!-- class="dark" -->
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Learning</title>
+<link rel="stylesheet" type="text/css" href="../styles/E-learn.css">
+<link rel="stylesheet" type="text/css" href="../styles/swiper.min.css">
+<style>
+.swiper-container {
+width: inherit;
+height: inherit;
+}
+
+.swiper-slide {
+text-align: center;
+font-size: 18px;
+background: var(--light-2);
+/*background-color:var(--blue-light);*/
+
+display: -webkit-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+-webkit-justify-content: center;
+justify-content: center;
+-webkit-box-align: center;
+-ms-flex-align: center;
+-webkit-align-items: center;
+align-items: center;
+border-radius: 20px;
+}
+
+	*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+.swiper-pagination-bullet{
+margin: 0;
+padding: 0;
+border: 0;
+cursor: pointer;
+background: none;
+position: relative;
+width: 10px;
+height: 10px;
+font-size: 0;
+background: #000;
+}
+
+.swiper-pagination-bullet::before,
+.swiper-pagination-bullet::after {
+content: "";
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+width: 8px;
+height: 8px;
+border-radius: 50%;
+-webkit-transition: all .25s;
+-o-transition: all .25s;
+transition: all .25s;
+}
+
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+background: #ffffff;
+-webkit-box-shadow: 0 2px 4px 0 rgb(0 0 0 / 24%);
+box-shadow: 0 2px 4px 0 rgb(0 0 0 / 24%);
+	z-index: 2;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+-webkit-transform: translate(-50%, -50%) scale(2);
+-ms-transform: translate(-50%, -50%) scale(2);
+transform: translate(-50%, -50%) scale(2);
+background: #3F8CFF;
+}
+</style>
+</head>
+
+<body>
+<main id="app">
+
+	<!--_____ SIDEBAR_____-->
+<div id="side-bar">
+<div id="logo-desk">
+ELearn<div id="logo-desk-dot"></div>
+</div>
+<div id="side-bar-extra-cont">
+	<div id="close-mob-side">
+		<svg>
+		<use href="#cancel"></use>
+		</svg>
+	</div>
+<ul id="side-bar-ul"></ul>
+</div>
+
+<div id="user-log-details">
+<div id="user-log-img-details" >
+<div id="user-log-img"><img src="../images/male-user.svg" alt="User Image"></div>
+<div id="user-log-name">
+<div id="user-actual-name">Mark O.</div>
+<div id="user-premium-acc">Premium account</div>
+</div>
+</div>
+<div id="user-log-arrow-up-down" class="icons">
+<svg>
+<use href="#arrow-up-down-icon"></use>
+</svg>
+</div>
+</div>
+</div>
+<!--_____END OF SIDEBAR_____-->
+
+
+	<!--_____ MAIN CONTENT_____-->
+<div id="main-content">
+<nav id="main-content-nav" role="navigation" >
+<div class="nav-content">
+<div id="desk-user-name">Hi Mark,</div>
+<ul>
+
+<li id="search-cont" >
+<div id="mob-hamburger">
+	<svg>
+<use href="#hamburger-icon"></use>
+</svg>
+</div>
+<div class="search-icon">
+<svg>
+<use href="#search"></use>
+</svg>
+</div>
+<div class="search-txt-desc">Search</div>
+</li>
+
+
+<li id="logo-mob">
+Elearn
+<div id="logo-mob-dot"></div>
+
+</li>
+
+<li id="notify-cont">
+<div class="notify-icon">
+<svg>
+<use href="#notification-sec"></use>
+</svg>
+</div>
+</li>
+</ul> 
+</div>
+</nav>
+
+<section id="app-cont">
+<!-- app cont 1 -->
+<div class="app-cont-sub" id="app-cont-sub-1"></div>
+<!--End Of app cont 1 -->
+
+
+<!-- app cont 2-->
+<div class="app-cont-sub" id="app-cont-sub-2">
+	<div class="app-cont-sub-2-sub">
+    	<h3 id="course-desc-txt">Course In Progress</h3>
+   <div id="coures-in-progress-list"></div>
+
+	<div class="learning-chart-progress">
+		<h3>Your learning point</h3>
+<div id="learning-main-chart-cont">
+	Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nisi deleniti distinctio nemo iure aliquam doloribus soluta provident animi et non consequuntur maiores, dicta. Tempora architecto quibusdam vitae cum, dolor.
+
+</div>
+	</div>
+</div>
+<!--End Of app cont 2-->
+
+</section>
+</div>
+<!--_____END OF MAIN CONTENT_____-->
+</main>
+
+
+<div id="user-details-pop" >
+	<div id="user-details-pop-content">
+		<div id="close-user-details-pop" class="icons">
+			<svg >
+				<use href="#cancel"></use>
+			</svg>
+		</div>
+		Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas ratione, neque harum distinctio error odio excepturi nostrum amet ad suscipit, maiores sed, facere illo explicabo nesciunt, repellendus? Ea eveniet, consequuntur?
+	</div>
+</div>
+
+
+
+<svg style="display: none" id="svg__render"></svg>
+<script type="text/javascript" src="../scripts/functions.js"></script>
+<script type="text/javascript" src="../scripts/icons.js"></script>
+<script type="text/javascript" src="../scripts/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="../scripts/E-learn.js"></script>
+
+
+</body>
+</html>
